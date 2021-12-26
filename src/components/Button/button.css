@@ -1,0 +1,9 @@
+.cpt-btn {
+    font-size: 1.2rem;
+    border-radius: 12px;
+    padding: 5px 10px;
+}
+
+.cpt-btn:hover {
+    background-color: #C3BAAA;
+}

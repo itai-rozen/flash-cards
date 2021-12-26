@@ -19,9 +19,10 @@ export default class Manage extends React.Component {
     render() {
 
         return <div className='manage-container'>
+            <div className="flashcards-container">
             {
                 this.props.flashCards.map(card => {
-                    return <div key={card.id}>
+                    return <div className='flashcard' key={card.id}>
                         <FlashCard
                             updateError={this.props.updateError}
                             error={this.props.error}
@@ -31,7 +32,10 @@ export default class Manage extends React.Component {
                     </div>
                 })
             }
+            </div>
+            <div className="add-btn">
             <Button content="Add" clickFunction={this.toggleAddForm} />
+            </div>
             {
                 this.state.isAdd && <Form buttonClickFunction={this.toggleAddForm}
                     updateState={this.props.updateState}

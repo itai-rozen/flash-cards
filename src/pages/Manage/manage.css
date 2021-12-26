@@ -1,0 +1,18 @@
+.manage-container {
+    height: 90vh;
+    background-color: #35012C;
+    display: flex;
+}
+
+.flashcards-container {
+    display: flex;
+    flex-wrap: wrap;  
+    height: 90%;
+}
+
+.flashcard {
+    margin: 15px auto;
+    font-size: 1.3rem;
+    background-color: #D99AFE;
+    border-radius: 13px;
+}

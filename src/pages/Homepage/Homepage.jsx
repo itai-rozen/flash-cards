@@ -18,15 +18,15 @@ export default class Homepage extends React.Component {
     popCard = () => {
         const roundCardsCopy = [...this.state.roundCards]
         const currCard = roundCardsCopy.pop()
-        this.setState({ currCard: currCard, roundCards: roundCardsCopy, isFlipped: false, isResolved:!this.state.isResolved })
+        this.setState({ currCard: currCard, roundCards: roundCardsCopy, isFlipped: false, isResolved: !this.state.isResolved })
         console.log(this.state.roundCards)
 
     }
 
     flipCard = () => {
         this.setState({ isFlipped: true })
-        if (this.state.roundCards.length === 0){
-            this.setState({isDone:true})
+        if (this.state.roundCards.length === 0) {
+            this.setState({ isDone: true })
             return
         }
     }
@@ -35,11 +35,11 @@ export default class Homepage extends React.Component {
     backToThePile = () => {
         const roundCardsCopy = [...this.state.roundCards]
         roundCardsCopy.unshift(this.state.currCard)
-        this.setState({ roundCards: roundCardsCopy , isFlipped: false, isResolved:!this.state.isResolved})
+        this.setState({ roundCards: roundCardsCopy, isFlipped: false, isResolved: !this.state.isResolved })
     }
     startRound = () => {
         const shuffled = [...this.state.cards]
-        this.setState({isDone:false, roundCards: shuffled.sort(() => 0.5 - Math.random()) })
+        this.setState({ isDone: false, roundCards: shuffled.sort(() => 0.5 - Math.random()) })
     }
     componentDidMount = () => {
         this.startRound()
@@ -64,28 +64,33 @@ export default class Homepage extends React.Component {
                     </div>
                 </div>
             </div>
-            <div className="progression">{this.state.cards.length-this.state.roundCards.length}/{this.state.cards.length}</div>
-            <button disabled={!this.state.isResolved || this.state.isDone} onClick={this.popCard}>Reveal Card</button>
-            <button disabled={this.state.isResolved || this.state.isDone}  onClick={this.flipCard}>Reveal answer</button>
+            <div className="progression">{this.state.cards.length - this.state.roundCards.length}/{this.state.cards.length}</div>
+            <div className="btn-container">
+                <button disabled={!this.state.isResolved || this.state.isDone} onClick={this.popCard}>Reveal Card</button>
+                <button disabled={this.state.isResolved || this.state.isDone} onClick={this.flipCard}>Reveal answer</button>
+            </div>
             <div className="resolve-container">
 
-            {(this.state.isFlipped && !this.state.isDone ) &&
-                <div>
-                    <h3>Did you get it right?</h3>
-                    <button onClick={() => this.setState({isFlipped: false, isResolved:!this.state.isResolved})}>
-                        yes
-                    </button>
-                    <button onClick={this.backToThePile}>
-                        no
-                    </button>
-                </div>
-            }
+                {(this.state.isFlipped && !this.state.isDone) &&
+                    <div className='resolve-container'>
+                        <h3>Did you get it right?</h3>
+                        <div className="btn-container">
+
+                            <button onClick={() => this.setState({ isFlipped: false, isResolved: !this.state.isResolved })}>
+                                yes
+                            </button>
+                            <button onClick={this.backToThePile}>
+                                no
+                            </button>
+                        </div>
+                    </div>
+                }
             </div>
             <div className="done-conatainer">
-            {this.state.isDone && <div>
-                    <h2>you're done!</h2>    
+                {this.state.isDone && <div>
+                    <h2>you're done!</h2>
                     <button onClick={this.startRound}>start over?</button>
-            </div>}
+                </div>}
             </div>
 
         </div>

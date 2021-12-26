@@ -9,7 +9,7 @@ export default class Nav extends React.Component {
                 Flash Cards
             </Link>
             <Link to="/manage">
-                MAnage Flash Cards
+                Manage Flash Cards
             </Link>
         </nav>
     }

@@ -1,0 +1,14 @@
+nav {
+    height: 10vh;
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: fantasy;
+    background-color: #C3BAAA;
+    letter-spacing: 2px;
+}
+
+a:hover {
+    color: #f1f1f1;
+}

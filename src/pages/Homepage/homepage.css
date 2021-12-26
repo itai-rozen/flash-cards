@@ -4,6 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #35012C;
 }
 .flip-card {
     background-color: transparent;
@@ -38,7 +39,7 @@
   }
   
   .flip-card-front {
-    background-color: #bbb;
+    background-color: #D99AFE;
     color: black;
   }
   
@@ -56,3 +57,31 @@
   .done-container {
       height: 10%;
   }
+
+  .btn-container {
+      width: 40%;
+      display: flex;
+      justify-content: space-between;
+  }
+
+  .homepage-container  button {
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    border-radius: 5px;    
+}
+
+.homepage-container h3 {
+    color: #f1f1f1;
+    margin: 5px 0;
+}
+
+.resolve-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.resolve-container .btn-container {
+    width: 40%;
+}
