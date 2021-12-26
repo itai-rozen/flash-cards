@@ -1,12 +1,19 @@
+.homepage-container {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .flip-card {
     background-color: transparent;
-    width: 300px;
-    height: 200px;
+    width: 40%;
+    height: 40%;
     border: 1px solid #f1f1f1;
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    perspective: 1000px; 
+    font-size: 2rem;
   }
   
-  /* This container is needed to position the front and back side */
   .flip-card-inner {
     position: relative;
     width: 100%;
@@ -15,34 +22,37 @@
     transform-style: preserve-3d;
   }
   
-  /* Do an horizontal flip when you move the mouse over the flip box container */
   .flipped .flip-card-inner {
     transform: rotateY(180deg);
     transition: transform 0.8s;
   }
   
-  /* Position the front and back side */
   .flip-card-front, .flip-card-back {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
   }
   
-  /* Style the front side (fallback if image is missing) */
   .flip-card-front {
     background-color: #bbb;
     color: black;
   }
   
-  /* Style the back side */
   .flip-card-back {
-    background-color: dodgerblue;
+    background-color: #372F33;
     color: white;
     transform: rotateY(180deg);
   }
 
-  .hide {
-      display: none;
+
+  .resolve-container {
+      height: 10%;
+  }
+
+  .done-container {
+      height: 10%;
   }
