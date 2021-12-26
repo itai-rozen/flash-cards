@@ -25,7 +25,7 @@ export default class Form extends React.Component {
 
     componentDidMount = () => {
         if (this.props.formAction === 'edit'){
-            const { formAction, card} = this.props
+            const {  card} = this.props
             const {id, question, answer} = card
             this.setState({id: id, question: question, answer: answer})
 

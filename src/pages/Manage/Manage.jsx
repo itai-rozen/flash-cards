@@ -1,6 +1,5 @@
 import React from 'react'
 import FlashCard from '../../components/FlashCard/FlashCard'
-import Api from './../../api'
 import Form from '../../components/Form/Form'
 import './manage.css'
 import Button from '../../components/Button/Button'

@@ -1,7 +1,6 @@
 import React from 'react'
 import Question from '../../components/Question/Question'
 import Answer from '../../components/Answer/Answer'
-import Button from '../../components/Button/Button'
 import './homepage.css'
 
 export default class Homepage extends React.Component {
